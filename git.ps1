@@ -1,6 +1,6 @@
 if (Get-Command git -ErrorAction SilentlyContinue) {
     # Generate SSH keys
-    ssh-keygen -t rsa -b 4096 -C "buiphuocminh94a@gmail.com"
+    ssh-keygen -t rsa -b 4096 -C "buiphuocminh94@gmail.com"
 
     # Start SSH agent and add SSH private key
     Start-Service ssh-agent

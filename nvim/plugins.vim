@@ -5,9 +5,12 @@ endif
 
 call plug#begin('C:\Users\buiph\AppData\Local\nvim-data\site\autoload\plugged')
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'iruzo/matrix-nvim'
+Plug 'junegunn/vim-easy-align'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.6' }
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
 
 call plug#end()
