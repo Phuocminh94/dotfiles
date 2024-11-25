@@ -26,6 +26,7 @@ nnoremap <silent> <leader>fn :Telescope find_files cwd=C:\Users\buiph\iCloudDriv
 nmap ga <Plug>(EasyAlign)
 nnoremap <silent> <leader>md :MarkdownPreviewToggle<CR>
 
+
 " insert
 inoremap <silent> jk <Esc>
 

@@ -39,6 +39,6 @@ if (!(Test-Path $PROFILE)) {
 }
 
 
-# Chocolateley
+# Install choco
 . .\choco.ps1
 

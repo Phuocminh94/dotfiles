@@ -21,15 +21,15 @@ Write-Host "Updating Chocolatey to the latest version..." -ForegroundColor Yello
 choco upgrade chocolatey -y
 
 # Install the required package(s)
-$packages = @("googlechrome", "firefox", "git", "zalo")  # List of packages to install
-
-foreach ($package in $packages) {
-    if (-not (choco list --local-only | Select-String $package)) {
-        Write-Host "Installing $package..." -ForegroundColor Yellow
-        choco install $package -y
-    } else {
-        Write-Host "$package is already installed." -ForegroundColor Green
-    }
-}
-
-Write-Host "All operations completed." -ForegroundColor Cyan
+#$packages = @("googlechrome", "firefox", "git", "zalo")  # List of packages to install
+#
+#foreach ($package in $packages) {
+#    if (-not (choco list --local-only | Select-String $package)) {
+#        Write-Host "Installing $package..." -ForegroundColor Yellow
+#        choco install $package -y
+#    } else {
+#        Write-Host "$package is already installed." -ForegroundColor Green
+#    }
+#}
+#
+#Write-Host "All operations completed." -ForegroundColor Cyan
