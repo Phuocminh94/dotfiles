@@ -1,8 +1,6 @@
 let mapleader = " "
 
-" normal
-nnoremap <leader>x :bd<CR>
-nnoremap <silent> <C-S> :w!<CR>
+" NORMAL
 nnoremap <silent> <leader>e :NERDTreeToggle %:p:h<CR>
 
 nnoremap <silent> j gj
@@ -18,19 +16,30 @@ nnoremap <C-Down>  :resize +2<CR>
 nnoremap <C-Left>  :vertical resize -2<CR>
 nnoremap <C-Right> :vertical resize +2<CR>
 
+nnoremap <silent> <leader>md :MarkdownPreviewToggle<CR>
+nmap ga <Plug>(EasyAlign)
+
+" Telescope
+" ---------
 nnoremap <silent> <leader>ff :Telescope find_files<CR>
 nnoremap <silent> <leader>fo :Telescope oldfiles<CR>
-nnoremap <silent> <leader>fN :Telescope find_files cwd=C:\Users\buiph\dotfiles\nvim<CR>
-nnoremap <silent> <leader>fn :Telescope find_files cwd=C:\Users\buiph\iCloudDrive\iCloud~md~obsidian\Notes<CR>
 
-nmap ga <Plug>(EasyAlign)
-nnoremap <silent> <leader>md :MarkdownPreviewToggle<CR>
-
-
-" insert
+" INSERT
 inoremap <silent> jk <Esc>
 
-
-" visual
+" VISUAL
 vnoremap <leader>s :sort<CR>
 xmap ga <Plug>(EasyAlign)
+
+" DEPRECATED
+" snacks.nvim
+" -----------
+"nnoremap <leader>ff :lua require("snacks.picker").files()<CR>
+"nnoremap <leader>fg :lua require("snacks.picker").grep()<CR>
+"nnoremap <leader>f/ :lua require("snacks.picker").grep_buffers()<CR>
+"nnoremap <leader>fu :lua require("snacks.picker").undo()<CR>
+"nnoremap <leader>fh :lua require("snacks.picker").search_history()<CR>
+"nnoremap <leader>e :lua require("snacks.picker").explorer()<CR>
+"
+"
+"nnoremap <leader><C-M> :!powershell & "C:\Program Files\R\R-4.4.2\bin\Rscript.exe" %<CR>
