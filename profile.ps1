@@ -1,15 +1,13 @@
-# Set Alias
-. 'C:\Users\buiph\PYTHON\Scripts\Activate.ps1'
-Remove-Item alias:R
-Set-Alias -Name 'R' -Value 'C:\Program Files\R\R-4.4.2\bin\R.exe'
+# Set alias R
+$RPath443 = 'C:\Program Files\R\R-4.4.3\bin\R.exe'
+$RPath442 = 'C:\Program Files\R\R-4.4.2\bin\R.exe'
 
-#set "TCL_LIBRARY=C:\Python312\tcl\tcl8.6"
-#set "TK_LIBRARY=C:\Python312\tcl\tcl8.6"
+Remove-Item alias:R -ErrorAction SilentlyContinue
 
-
-# Export PostgresSQL to PATH
-#$env:PATH += ';C:\Program Files\PostgreSQL\16\bin'
-
-
-# Activate PYTHON env
-
+if (Test-Path $RPath443) {
+    Set-Alias -Name 'R' -Value $RPath443
+} elseif (Test-Path $RPath442) {
+    Set-Alias -Name 'R' -Value $RPath442
+} else {
+    Write-Host "No R executable found at expected locations." -ForegroundColor Red
+}

@@ -1,9 +1,9 @@
 " auto-install vim-plug
-if empty(glob('C:\Users\Admin\AppData\Local\nvim-data\site\autoload\plug.vim'))
-	call system('powershell -Command "iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni \"$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim\" -Force"')
+if empty(glob($HOME . '\AppData\Local\nvim-data\site\autoload\plug.vim'))
+    call system('powershell -Command "iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim | ni \"$env:LOCALAPPDATA\nvim-data\site\autoload\plug.vim\" -Force"')
 endif
 
-call plug#begin('C:\Users\Admin\AppData\Local\nvim-data\site\autoload\plugged')
+call plug#begin($HOME . '\AppData\Local\nvim-data\site\autoload\plugged')
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'iruzo/matrix-nvim'
