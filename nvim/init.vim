@@ -16,10 +16,18 @@ set tabstop=4
 set textwidth=80
 
 " plugins
-source C:\Users\Admin\dotfiles\nvim\plugins.vim
+source $HOME/dotfiles/nvim/plugins.vim
 
 " keymaps
-source C:\Users\Admin\dotfiles\nvim\keymaps.vim
+source $HOME/dotfiles/nvim/keymaps.vim
 
 " colorscheme
 colorscheme matrix
+
+" lua config
+lua require('vimtex')
+lua require('mkdp')
+lua require('lsp_config')
+lua require('luasnip.loaders.from_lua').load()
+lua require('luasnip.loaders.from_lua').lazy_load({paths = '~/dotfiles/nvim/lua/snippets/'})
+lua require('luasnip.loaders.from_vscode').lazy_load({exclude = {'markdown'}})

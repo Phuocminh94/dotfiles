@@ -20,9 +20,22 @@ nnoremap <silent> <leader>md :MarkdownPreviewToggle<CR>
 nmap ga <Plug>(EasyAlign)
 
 " Telescope
-" ---------
 nnoremap <silent> <leader>ff :Telescope find_files<CR>
 nnoremap <silent> <leader>fo :Telescope oldfiles<CR>
+
+" Lsp
+nnoremap <silent> gl <cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <leader>fm <cmd>lua vim.lsp.buf.format({ async = true })<CR>
+
+" Luasnip
+inoremap <silent> <C-s> <cmd>lua require('luasnip').expand()<CR>
 
 " INSERT
 inoremap <silent> jk <Esc>
@@ -32,14 +45,4 @@ vnoremap <leader>s :sort<CR>
 xmap ga <Plug>(EasyAlign)
 
 " DEPRECATED
-" snacks.nvim
-" -----------
-"nnoremap <leader>ff :lua require("snacks.picker").files()<CR>
-"nnoremap <leader>fg :lua require("snacks.picker").grep()<CR>
-"nnoremap <leader>f/ :lua require("snacks.picker").grep_buffers()<CR>
-"nnoremap <leader>fu :lua require("snacks.picker").undo()<CR>
-"nnoremap <leader>fh :lua require("snacks.picker").search_history()<CR>
-"nnoremap <leader>e :lua require("snacks.picker").explorer()<CR>
-"
-"
 "nnoremap <leader><C-M> :!powershell & "C:\Program Files\R\R-4.4.2\bin\Rscript.exe" %<CR>
