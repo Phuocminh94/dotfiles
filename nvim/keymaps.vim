@@ -37,6 +37,12 @@ nnoremap <silent> <leader>fm <cmd>lua vim.lsp.buf.format({ async = true })<CR>
 " Luasnip
 inoremap <silent> <C-s> <cmd>lua require('luasnip').expand()<CR>
 
+" Git
+nnoremap ]h <plug>(signify-next-hunk)
+nnoremap [h <plug>(signify-prev-hunk)
+nnoremap <silent><leader>hp :SignifyHunkDiff<CR>
+nnoremap <silent><leader>hr :SignifyHunkUndo<CR>
+
 " INSERT
 inoremap <silent> jk <Esc>
 

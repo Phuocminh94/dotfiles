@@ -13,7 +13,11 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-vim.diagnostic.config {virtual_text = false, signs = true}
+vim.diagnostic.config {
+    virtual_text = false,
+    signs = true,
+    update_in_insert = false
+}
 
 -- Highlight symbol under cursor
 M.highlight_symbols = function(client)
