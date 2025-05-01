@@ -19,7 +19,7 @@ hi NonText          guifg=#60ff60                 ctermfg=lightgreen
 hi Search           guifg=#001000  guibg=#60ff60
 hi Question         guifg=#80ff80                 ctermfg=lightgreen
 hi MatchParen       guifg=#90ff90  guibg=bg       gui=bold
-hi LineNr           guifg=#60ff60                 ctermfg=darkgrey
+hi LineNr           guifg=#83919f                 ctermfg=darkgrey
 hi CursorLineNr     guifg=#ffff00                 ctermfg=yellow
 hi Directory        guifg=#40d040                 ctermfg=lightgreen
 hi Folded           guifg=#001000  guibg=#006000  ctermfg=black      ctermbg=darkgreen  gui=bold
