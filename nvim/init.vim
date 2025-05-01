@@ -8,7 +8,6 @@ set cursorline
 set cursorlineopt=number
 set expandtab
 set fillchars=eob:\ 
-set laststatus=0
 set mouse=a
 set noswapfile
 set number
@@ -31,14 +30,21 @@ if g:colors_name == 'green-shades'
     highlight CmpItemAbbr       guifg=#ffff00 guibg=NONE
     highlight CmpItemAbbrMatch  guifg=#ffff00 guibg=NONE
     highlight CmpItemKind       guifg=#00bab6 guibg=NONE
-    highlight CursorLineNr      guifg=#8cf8f7 guibg=NONE
+    highlight Comment           guifg=#888888 gui=italic
+    highlight Constant          guifg=#ffff00 guibg=NONE
+    highlight CursorLineNr      guifg=#ffff00 guibg=NONE
+    highlight Function          guifg=#00bab6
+    highlight Identifier        guifg=#57bb56
+    highlight Visual            guifg=#ffffff guibg=#1b3ba2
 endif
 
 " lua config
-lua require('vimtex')
-lua require('mkdp')
+lua require('autocmd')
 lua require('lsp_config')
-lua require('signify')
-lua require('luasnip.loaders.from_lua').load()
 lua require('luasnip.loaders.from_lua').lazy_load({paths = '~/dotfiles/nvim/lua/snippets/'})
+lua require('luasnip.loaders.from_lua').load()
 lua require('luasnip.loaders.from_vscode').lazy_load()
+lua require('mkdp')
+lua require('terminal')
+lua require('vimtex')
+lua require('statusline')

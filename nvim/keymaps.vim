@@ -43,6 +43,11 @@ nnoremap [h <plug>(signify-prev-hunk)
 nnoremap <silent><leader>hp :SignifyHunkDiff<CR>
 nnoremap <silent><leader>hr :SignifyHunkUndo<CR>
 
+" Float term
+nnoremap <silent> <A-\> <cmd>lua require("FTerm").toggle()<CR>
+tnoremap <silent> <A-\> <cmd>lua require("FTerm").toggle()<CR>
+nnoremap <silent> <A-g> <cmd>lua Gitui:toggle()<CR>
+
 " INSERT
 inoremap <silent> jk <Esc>
 
