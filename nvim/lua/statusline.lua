@@ -118,11 +118,6 @@ end
 M.setup = function()
   vim.opt.laststatus = 2
   vim.opt.statusline = "%!v:lua.require('statusline').build_statusline()"
-
-  -- Optional highlight group
-  vim.cmd([[highlight St_Mode guibg=#373b43 guifg=#83919f gui=bold]])
-  vim.cmd([[highlight St_Text guibg=#242830 guifg=#83919f gui=bold]])
-  vim.cmd([[highlight St_CWD  guibg=#373b43 guifg=#40ff40 gui=bold]])
 end
 
 M.setup()

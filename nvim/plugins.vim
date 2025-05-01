@@ -5,8 +5,6 @@ endif
 
 call plug#begin('$HOME\AppData\Local\nvim-data\site\autoload\plugged')
 
-Plug 'iruzo/matrix-nvim'
-Plug 'linusng/green-shades.vim' 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/vim-easy-align'
 Plug 'nvim-lua/plenary.nvim'
@@ -29,5 +27,6 @@ Plug 'numToStr/FTerm.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()

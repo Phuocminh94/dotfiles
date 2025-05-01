@@ -23,24 +23,8 @@ source $HOME/dotfiles/nvim/plugins.vim
 " keymaps
 source $HOME/dotfiles/nvim/keymaps.vim
 
-" colorscheme
-colorscheme green-shades
-
-if g:colors_name == 'green-shades'
-    "See :h Inspect
-    "See :https://neovim.io/
-    highlight CmpItemAbbr       guifg=#ffff00 guibg=NONE
-    highlight CmpItemAbbrMatch  guifg=#ffff00 guibg=NONE
-    highlight CmpItemKind       guifg=#00bab6 guibg=NONE
-    highlight Comment           guifg=#888888 gui=italic
-    highlight Constant          guifg=#ffff00 guibg=NONE
-    highlight CursorLineNr      guifg=#ffff00 guibg=NONE
-    highlight Function          guifg=#00bab6
-    highlight Identifier        guifg=#57bb56
-    highlight Visual            guifg=#ffffff guibg=#1b3ba2
-    highlight FloatBorder       guifg=#354948
-    highlight TelescopeBorder   guifg=#354948
-endif
+" my colorscheme
+colorscheme neovim
 
 " lua config
 lua require('autocmd')
@@ -49,7 +33,7 @@ lua require('luasnip.loaders.from_lua').lazy_load({paths = '~/dotfiles/nvim/lua/
 lua require('luasnip.loaders.from_lua').load()
 lua require('luasnip.loaders.from_vscode').lazy_load()
 lua require('mkdp')
-lua require('vimtex')
 lua require('statusline')
 lua require('terminal')
 lua require('tls')
+lua require('vimtex')

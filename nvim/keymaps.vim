@@ -48,6 +48,9 @@ nnoremap <silent> <A-\> <cmd>lua require("FTerm").toggle()<CR>
 tnoremap <silent> <A-\> <cmd>lua require("FTerm").toggle()<CR>
 nnoremap <silent> <A-g> <cmd>lua Gitui:toggle()<CR>
 
+" Colorizer
+nnoremap <silent> <A-c> <cmd>:ColorizerToggle<CR>
+
 " INSERT
 inoremap <silent> jk <Esc>
 
