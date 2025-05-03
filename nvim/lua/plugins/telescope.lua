@@ -1,5 +1,8 @@
--- https://github.com/nvim-telescope/telescope.nvim/issues/2749
-require('telescope').setup({
+return {
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.8',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  opts = {
     defaults = {
         borderchars = {
             prompt = { " ", " ", "─", "│", "│", " ", "─", "└" },
@@ -27,4 +30,8 @@ require('telescope').setup({
             },
         },
     }
-})
+  },
+  config = function(_, opts)
+    require("telescope").setup(opts)
+  end,
+}
