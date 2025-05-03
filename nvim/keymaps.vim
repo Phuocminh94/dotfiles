@@ -1,7 +1,9 @@
 let mapleader = " "
 
 " NORMAL
-nnoremap <silent> <leader>e :NERDTreeToggle %:p:h<CR>
+nnoremap <silent> <leader>e <cmd>NERDTreeToggle %:p:h<CR>
+nnoremap <silent> <leader>n <cmd>NERDTreeToggle H:/My Drive/mNotes/<CR>, {desc ='Open mNotes'}
+nnoremap <silent> <leader>N <cmd>NERDTreeToggle $HOME/dotfiles/nvim<CR>, {desc = 'Open config'}
 
 nnoremap <silent> j gj
 nnoremap <silent> k gk
@@ -11,19 +13,19 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <C-Up>    :resize -2<CR>
-nnoremap <C-Down>  :resize +2<CR>
-nnoremap <C-Left>  :vertical resize -2<CR>
-nnoremap <C-Right> :vertical resize +2<CR>
+nnoremap <silent> <C-Up>    <cmd>resize -2<CR>
+nnoremap <silent> <C-Down>  <cmd>resize +2<CR>
+nnoremap <silent> <C-Left>  <cmd>vertical resize -2<CR>
+nnoremap <silent> <C-Right> <cmd>vertical resize +2<CR>
 
-nnoremap <silent> <leader>md :MarkdownPreviewToggle<CR>
+nnoremap <silent> <leader>md <cmd>MarkdownPreviewToggle<CR>
 nmap ga <Plug>(EasyAlign)
 
-" Telescope
-nnoremap <silent> <leader>ff :Telescope find_files<CR>
-nnoremap <silent> <leader>fo :Telescope oldfiles<CR>
+" telescope
+nnoremap <silent> <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <silent> <leader>fo <cmd>Telescope oldfiles<CR>
 
-" Lsp
+" lsp
 nnoremap <silent> gl <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
@@ -34,28 +36,31 @@ nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <leader>fm <cmd>lua vim.lsp.buf.format({ async = true })<CR>
 
-" Luasnip
+" luasnip
 inoremap <silent> <C-s> <cmd>lua require('luasnip').expand()<CR>
 
-" Git
-nnoremap ]h <plug>(signify-next-hunk)
-nnoremap [h <plug>(signify-prev-hunk)
-nnoremap <silent><leader>hp :SignifyHunkDiff<CR>
-nnoremap <silent><leader>hr :SignifyHunkUndo<CR>
+" gitsigns
+nnoremap <silent> ]h <cmd>lua require('gitsigns').next_hunk()<CR>
+nnoremap <silent> [h <cmd>lua require('gitsigns').prev_hunk()<CR>
+nnoremap <silent> <leader>hr <cmd>lua require('gitsigns').reset_hunk()<CR>
+nnoremap <silent> <leader>hp <cmd>lua require('gitsigns').preview_hunk()<CR>
 
-" Float term
+" float term
 nnoremap <silent> <A-\> <cmd>lua require("FTerm").toggle()<CR>
 tnoremap <silent> <A-\> <cmd>lua require("FTerm").toggle()<CR>
 nnoremap <silent> <A-g> <cmd>lua Gitui:toggle()<CR>
 
-" Colorizer
-nnoremap <silent> <A-c> <cmd>:ColorizerToggle<CR>
+" colorizer
+nnoremap <silent> <A-c> <cmd>ColorizerToggle<CR>
+
+" img-clip
+nnoremap <silent> <leader>p <cmd>PasteImage<CR>
 
 " INSERT
 inoremap <silent> jk <Esc>
 
 " VISUAL
-vnoremap <leader>s :sort<CR>
+vnoremap <leader>s <cmd>sort<CR>
 xmap ga <Plug>(EasyAlign)
 
 " DEPRECATED

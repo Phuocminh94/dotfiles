@@ -89,6 +89,21 @@ M.file = function()
   return "%#St_Text# " .. icon .. " " .. name .. " "
 end
 
+M.git = function()
+  if not vim.b[stbufnr()].gitsigns_head or vim.b[stbufnr()].gitsigns_git_status then
+    return ""
+  end
+
+  local git_status = vim.b[stbufnr()].gitsigns_status_dict
+
+  local added = (git_status.added and git_status.added ~= 0) and ("  " .. git_status.added) or ""
+  local changed = (git_status.changed and git_status.changed ~= 0) and ("  " .. git_status.changed) or ""
+  local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
+  local branch_name = " " .. git_status.head
+
+  return " " .. branch_name .. added .. changed .. removed
+end
+
 M.clock = function()
   return "%#St_Text#   " .. os.date("%H:%M")
 end
@@ -106,6 +121,7 @@ M.build_statusline = function()
   return table.concat({
     M.mode(),
     M.file(),
+    M.git(),
     "%=",
     M.clock(),
     "%=",

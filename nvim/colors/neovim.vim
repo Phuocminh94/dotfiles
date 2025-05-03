@@ -11,7 +11,7 @@ endif
 let colors_name = "neovim"
 
 " Basics
-hi Normal           guifg=#00d000  guibg=#001000  ctermfg=82      ctermbg=black
+hi Normal           guifg=#00d000  guibg=#0b151b  ctermfg=82      ctermbg=black
 hi ErrorMsg         guifg=#ffffff  guibg=#ff0000  ctermfg=white      ctermbg=red
 hi Visual           guifg=#ffffff  guibg=#1b3ba2  ctermfg=darkgreen  ctermbg=darkgrey
 hi Todo             guifg=#001000  guibg=#00ff00  ctermfg=black      ctermbg=lightgreen
