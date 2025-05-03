@@ -2,6 +2,9 @@ return {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.8',
   dependencies = { 'nvim-lua/plenary.nvim' },
+  config = function(_, opts)
+    require("telescope").setup(opts)
+  end,
   opts = {
     defaults = {
         borderchars = {
@@ -31,7 +34,4 @@ return {
         },
     }
   },
-  config = function(_, opts)
-    require("telescope").setup(opts)
-  end,
 }

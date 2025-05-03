@@ -3,19 +3,19 @@ return {
         "hrsh7th/nvim-cmp",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp", -- LSP source
-            "hrsh7th/cmp-buffer", -- Buffer source
-            "hrsh7th/cmp-path", -- Path source
-            "hrsh7th/cmp-cmdline", -- Command-line source
+            "hrsh7th/cmp-buffer",   -- Buffer source
+            "hrsh7th/cmp-path",     -- Path source
+            "hrsh7th/cmp-cmdline",  -- Command-line source
             {
                 "L3MON4D3/LuaSnip",
                 dependencies = { "rafamadriz/friendly-snippets" },
-            },                    -- Snippet engine
+            },                          -- Snippet engine
             "saadparwaiz1/cmp_luasnip", -- Snippet completion source
         },
         config = function()
             local cmp = require("cmp")
             local luasnip = require("luasnip")
-            require('luasnip.loaders.from_lua').lazy_load({paths = '~/dotfiles/nvim/lua/snippets/'})
+            require('luasnip.loaders.from_lua').lazy_load({ paths = '~/dotfiles/nvim/lua/snippets/' })
             require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
