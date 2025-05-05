@@ -1,5 +1,15 @@
+vim.g.mNote_path = "H:/My Drive/mNote/"
+vim.g.r_path = (function()
+  local r_path = vim.fn.exepath("R")
+  if r_path ~= "" then
+    return r_path
+  else
+    vim.notify("R executable not found in PATH", vim.log.levels.WARN)
+    return nil
+  end
+end)()
+
 -- options
-vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 vim.opt.cursorline = true
@@ -53,3 +63,4 @@ vim.cmd.colorscheme('neovim')
 -- lua config
 require('autocmd')
 require('statusline')
+require('tabline')

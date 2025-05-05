@@ -7,6 +7,8 @@ return {
   end,
   opts = {
     defaults = {
+        -- top, right, bottom, left,
+        -- top-left, top-right, bottom-right, bottom-left
         borderchars = {
             prompt = { " ", " ", "─", "│", "│", " ", "─", "└" },
             results = { "─", " ", " ", "│", "┌", "─", " ", "│" },

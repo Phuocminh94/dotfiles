@@ -66,6 +66,11 @@ hi St_Mode guibg=#373b43 guifg=#83919f gui=bold
 hi St_Text guibg=#242830 guifg=#83919f gui=bold
 hi St_CWD  guibg=#373b43 guifg=#40ff40 gui=bold
 
+" Tabline
+hi Tabline  guibg=#373b43 guifg=#83919f gui=bold
+hi TablineFill guibg=#0b151b gui=bold
+hi TablineSel guifg=#ffffff guibg=#00bab6
+
 " Syntax links
 hi link String         StringConstant
 hi link Character      Constant

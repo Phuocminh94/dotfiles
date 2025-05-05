@@ -12,7 +12,7 @@ return {
         height = 0.6,  -- Height of the terminal window
         width = 0.5,   -- Width of the terminal window
         x = 1,         -- X axis of the terminal window
-        y = 1,         -- Y axis of the terminal window
+        y = 0.8,         -- Y axis of the terminal window
       },
     })
 

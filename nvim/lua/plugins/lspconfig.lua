@@ -108,6 +108,19 @@ return {
 
             -- vim
             lspconfig.vimls.setup {}
+
+            -- R
+            lspconfig.r_language_server.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    r = { rpath = vim.g.r_path }
+                },
+                filetypes = { "r", "rmd", "rmarkdown" }, -- <- this is the key line
+                cmd_env = {
+                    LANG = "en_US.UTF-8"
+                }
+            })
         end
     }
 }

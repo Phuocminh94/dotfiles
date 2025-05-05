@@ -5,9 +5,19 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 
 -- NORMAL mode
+
+-- NERDTree
 keymap("n", "<leader>e", "<cmd>NERDTreeToggle %:p:h<CR>", opts)
-keymap("n", "<leader>n", "<cmd>NERDTreeToggle H:/My Drive/mNotes/<CR>", opts)
-keymap("n", "<leader>N", "<cmd>NERDTreeToggle $HOME/dotfiles/nvim<CR>", opts)
+keymap("n", "<leader>cd", function() -- change to current cwd
+    local bufname = vim.api.nvim_buf_get_name(0)
+    if bufname == "" then return end
+
+    local dirname = vim.fs.dirname(bufname)
+    if dirname and vim.fn.getcwd() ~= dirname then
+        vim.fn.chdir(dirname)
+        vim.notify("Changed directory to " .. dirname, vim.log.levels.INFO)
+    end
+end, { desc = "Change cwd to current file's directory" })
 
 keymap("n", "j", "gj", opts)
 keymap("n", "k", "gk", opts)
@@ -25,9 +35,31 @@ keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", opts)
 keymap("n", "<leader>md", "<cmd>MarkdownPreviewToggle<CR>", opts)
 keymap("n", "ga", "<Plug>(EasyAlign)", {})
 
+keymap("n", "n", "nzz", opts) -- auto recenter search
+keymap("n", "N", "Nzz", opts) -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+
 -- Telescope
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>ff", function()
+    require("telescope.builtin")
+        .find_files(require("telescope.themes")
+            .get_ivy())
+end, opts)
+
+keymap("n", "<leader>fo", function()
+    require("telescope.builtin")
+        .oldfiles(require("telescope.themes")
+            .get_cursor({ previewer = false }))
+end, opts)
+
+keymap("n", "<leader>fg", function()
+    require("telescope.builtin").live_grep()
+end, opts)
+
+keymap("n", "<leader>fn", function()
+  local theme = require("telescope.themes").get_ivy()
+  theme.cwd = "H:/My Drive/mNote/"
+  require("telescope.builtin").find_files(theme)
+end, opts)
 
 -- LSP
 keymap("n", "gl", vim.diagnostic.open_float, opts)
@@ -66,6 +98,3 @@ keymap("i", "jk", "<Esc>", opts)
 -- VISUAL mode
 keymap("v", "<leader>s", "<cmd>sort<CR>", opts)
 keymap("x", "ga", "<Plug>(EasyAlign)", {})
-
--- DEPRECATED command
--- keymap("n", "<leader><C-M>", ":!powershell & \"C:\\Program Files\\R\\R-4.4.2\\bin\\Rscript.exe\" %<CR>", opts)

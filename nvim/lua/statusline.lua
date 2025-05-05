@@ -132,7 +132,7 @@ end
 
 -- Apply the statusline config
 M.setup = function()
-  vim.opt.laststatus = 2
+  vim.opt.laststatus = 3
   vim.opt.statusline = "%!v:lua.require('statusline').build_statusline()"
 end
 
