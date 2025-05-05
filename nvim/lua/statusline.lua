@@ -134,6 +134,12 @@ end
 M.setup = function()
   vim.opt.laststatus = 3
   vim.opt.statusline = "%!v:lua.require('statusline').build_statusline()"
+
+  -- Start a repeating timer that refreshes the statusline every second
+  local timer = vim.loop.new_timer()
+  timer:start(0, 1000, vim.schedule_wrap(function()
+    vim.cmd("redrawstatus")
+  end))
 end
 
 M.setup()
